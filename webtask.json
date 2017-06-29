@@ -1,6 +1,6 @@
 {
-  "title": "Auth0 Authorization",
-  "name": "auth0-authz",
+  "title": "Auth0 Authorization RhoAI Fork",
+  "name": "auth0-authz-rhoai-fork",
   "version": "2.4.1",
   "author": "auth0",
   "description": "This extension gives Auth0 customers the possibility to manage group memberships for their users.",

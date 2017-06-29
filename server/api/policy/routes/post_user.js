@@ -53,8 +53,13 @@ module.exports = (server) => ({
 
         return getPermissionsForRoles(req.storage, relevantRoles);
       })
-      .then(permissions => ({ ...result, permissions: permissions.map(permission => permission.name) }))
-      .then(data => reply({ groups: _.uniq(data.groups), permissions: _.uniq(data.permissions), roles: _.uniq(data.roles) }))
+      .then(permissions => ({ ...result, permissions: permissions.map(permission => {
+        return {
+          name: permission.name,
+          description: permission.description
+        };
+      }) }))
+      .then(data => reply({ groups: _.uniq(data.groups), permissions: data.permissions, roles: _.uniq(data.roles) }))
       .catch(err => reply.error(err));
   }
 });
